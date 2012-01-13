@@ -1,14 +1,31 @@
 /******************************************************************************
 *
+* jQuery tsBorder
+* @copyright Tim Swann https://bitbucket.org/faffyman
+* @version 0.1
+*
+* *************************************************************
+*
+* Do NOT Remove this licensing text.
+* Licensed under Creative Commons 3.0 (Attribution / Share Alike)
+* You Are Free to:
+* to Share — to copy, distribute and transmit the work
+* to Remix — to adapt the work
+* to make commercial use of the work
+*
+* http://creativecommons.org/licenses/by-sa/3.0/
+*
+* *****************************************************************************
+*
 * Simple jQuery plugin to apply a semi transparent border overlay to an element
 * by means of adding 4 divs - top, right, bottom, left
 *
 * Three parameters
 * -----------------
-* color: hec code including the # OR rgb(0,0,0) definition the background/color of the border
+* color: hex code including the '#' OR rgb(0,0,0) definition
+*        i.e. the background/color of the border
 * thickness: integer
 * opacity: decimal
-*
 *
 *
 * Example Usage
