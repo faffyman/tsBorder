@@ -57,30 +57,16 @@
       $(this).parent().css('position','relative');
 
        var opts = $.extend({}, $.fn.tsBorder.defaults, options);
-	     /*
-	     options = options.extend({
-	       className = '',
-	       borderSize = 15,
-	       borderColor = '#ffffff',
-	       borderOpacity =
-	       0.9
-	     });
-	     */
-
 
 	     var n = 0;
-		 return this.each(function()
+  		 return this.each(function()
         {
-            //alert(this.vari);    // would output `undefined`
-            //alert($(this).attr('id')); // would output `$.fn.vari`
             // get position of this element.
-
             // .offset = position relative to document
             // .position = position relative to the offset parent
 
-            oPos = $(this).position(); //get absolute position relative to the page as a whole.
+            oPos = $(this).position();
 
-            //alert(oPos.top + '\n' + oPos.left);
             var nWidth = $(this).width();
             var nHeight = $(this).height();
 
@@ -152,14 +138,6 @@
                    .append(dl)
                    .append(dr);
 
-
-
-            // add bottom border div
-            //$(this).after('<div class="brdr" style="position:absolute;z-index:99;top:'+( (oPos.top+nHeight) - 15)+'px;left:'+oPos.left+'px;height:15px;width:'+nWidth+'px;background:#ffffff;opacity:0.9;"></div>');
-
-            // add left border div
-            // add right border div
-            // apply styles to border divs
         });
 
 
