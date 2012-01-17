@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>jQuery tsBorder Example 1</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="author" content="faffyman@gmail.com" />
+    <meta name="copyright" content="faffyman@gmail.com" />
+
+    <!--
+    * jQuery tsBorder
+    * @copyright Tim Swann https://bitbucket.org/faffyman
+    * @version 0.1
+    -->
+
+    <!-- All example images supplied by http://www.flickr.com/faffyman -->
+
+
+    <!-- Scripts -->
+    <!-- use 1.4.2, if its good enough for jQuery.com it's good enough for us. -->
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+    <script>!window.jQuery && document.write('<script src="http://code.jquery.com/jquery-1.4.2.min.js"><\/script>');</script>
+
+
+    <script type="text/javascript"  src="./jquery.tsBorder.js" ></script>
+
+
+    <script type="text/javascript">
+
+    $(document).ready(function(){
+
+
+      //#box8 image - black 10px border
+      $('#box1 img').tsBorder({
+                           thickness: 10,
+                           color: '#000000',
+                           opacity:0.3
+                          });
+
+      // '#box2 - white 15px border 50%
+      $('#box2 img').tsBorder({
+                           thickness: 15,
+                           color: '#ffffff',
+                           opacity:0.5
+                          });
+
+      // '#box3 - white 15px border 50%
+      $('#box3 img').tsBorder({
+                           thickness: 78,
+                           color: '#00ff00',
+                           opacity:0.8
+                          });
+
+
+      $('#box4 img').tsBorder({
+                           thickness: 10,
+                           color: '#ffffff',
+                           opacity:0.5
+                          });
+
+      $('#box5 img').tsBorder({
+                           thickness: 10,
+                           color: '#000000',
+                           opacity:0.3,
+                           offsetTop: 5,
+                           offsetLeft: 5
+                          });
+
+
+      $('#box6 img').tsBorder({
+                           thickness: 10,
+                           color: '#ffffff',
+                           opacity:0.7,
+                           offsetLeft: 20
+                          });
+
+      $('#box7 img').tsBorder({
+                           thickness: 10,
+                           color: '#ffffff',
+                           opacity:0.7,
+                          });
+
+      $('#box7b img').tsBorder({
+                           thickness: 20,
+                           color: '#ff0000',
+                           opacity:0.6,
+                          }).tsBorder({
+                           thickness: 10,
+                           color: '#00ff00',
+                           opacity:0.5,
+                          });
+
+
+      //#box8 - 3px red 20% opacity
+      $('#box8').tsBorder({
+                     thickness: 3,
+                     color: '#000000',
+                     opacity:0.2
+                    });
+
+      //#box8 image - black 10px border
+      $('#box8 img').tsBorder({
+                           thickness: 10,
+                           color: '#ff0000',
+                           opacity:0.7
+                          });
+
+
+          $('.thickBlack').tsBorder({
+                           thickness: 15,
+                           color: '#000000',
+                           opacity:0.7});
+
+          $('.thinRed').tsBorder({
+                           thickness: 4,
+                           color: '#ff0000',
+                           opacity:0.7 });
+
+
+
+
+    });
+
+    </script>
+
+
+    <!-- CSS -->
+
+    <style type="text/css">
+
+    div.exmpl {
+      width:70%;
+      overflow:hidden;
+      margin:10px auto 10px 20px;
+    }
+    div.exmpl img {
+      margin-right:20px;
+    }
+
+    #box7 img ,
+    #box6 img ,
+    #box4 img {
+      float:right;
+      margin-left:20px;
+      margin-right:5px;
+    }
+
+    body #box7 img {
+      margin:0px !important;
+      padding:0px;
+    }
+
+    #box8{
+      margin:10px auto;
+      padding:20px;
+      overflow:hidden;
+      width:80%;
+      border:solid 1px #00ff00;
+    }
+
+
+    </style>
+
+  </head>
+  <body>
+    <h1>jQuery tsBorder Examples</h1>
+
+    <p>
+      tsBorder allows you to overlay a semi transparent border on block elements.<br />
+      You can choose your preferred border colour, opacity and thickness in pixels.
+    </p>
+
+    <div id="box1" class="exmpl">
+      <p>
+      <img src="images/img001.jpg" alt="example image with black 10px border" width="240" height="160" align="left" />
+        Landscape Image gets a 10px Black border set to 0.3 (30%) opacity
+      <pre>
+      $('#elementID').tsBorder({
+                           thickness: 10,
+                           color: '#000000',
+                           opacity:0.3
+                          });
+      </pre>
+      </p>
+    </div>
+
+    <div id="box2" class="exmpl">
+      <img src="images/img002.jpg" alt="example image with black 10px border" width="180" height="240" align="left" />
+      Portrait Image gets a 15px Whiteborder set to 0.5 (50%) opacity
+      <pre>
+      $('#elementID').tsBorder({
+                           thickness: 15,
+                           color: '#ffffff',
+                           opacity:0.5
+                          });
+      </pre>
+    </div>
+
+    <div id="box3" class="exmpl">
+      <img src="images/img003.jpg" alt="example image with black 10px border" width="240" height="180" align="left" />
+      Extreme - example: Image gets a 78px Green border set to 0.8 (80%) opacity
+      <pre>
+      $('#elementID').tsBorder({
+                           thickness: 78,
+                           color: '#00ff00',
+                           opacity:0.8
+                          });
+      </pre>
+    </div>
+
+    <div id="box4" class="exmpl">
+      <img src="images/img004.jpg" alt="example image with black 10px border" width="239" height="240" align="left" />
+      Image Floated right. Floated elements sometimes go a bit funny with  the standard implementation. As seen here.<br />
+      However the issue is more related to margins that the floating. There are ways to manually correct this seen below.
+      <pre>
+      $('#elementID').tsBorder({
+                           thickness: 10,
+                           color: '#ffffff',
+                           opacity:0.5
+                          });
+      </pre>
+    </div>
+
+    <div id="box5" class="exmpl">
+      <img src="images/img005.jpg" alt="example image with black 10px border" width="240" height="180" align="left" />
+      If an element is floated or already has a border property, or for some reason you just want to
+      <em>shift</em> the overlay border, you can use the offset properties.
+      <pre>
+      $('#elementID').tsBorder({
+                           thickness: 10,
+                           color: '#000000',
+                           opacity:0.3,
+                           <strong>offsetLeft: 5</strong>,
+                           <strong>offsetTop: 5</strong>
+                          });
+      </pre>
+    </div>
+
+    <div id="box6" class="exmpl">
+      <img src="images/img006.jpg" alt="example image with black 10px border" width="240" height="180" align="left" />
+      Image Floated right. This time we use the offsetLeft property to correct for the left margin of the floated element.
+      <pre>
+      $('#elementID').tsBorder({
+                           thickness: 10,
+                           color: '#ffffff',
+                           opacity:0.5,
+                           offsetLeft:20
+                          });
+      </pre>
+    </div>
+
+    <div id="box7" class="exmpl">
+      <img src="images/img007.jpg" alt="example image floated with no left margin" width="240" height="180" align="left" />
+        In this example the floated element doesn't use an offsetleft property.<br />
+        That's because there is no left margin
+      <pre>
+
+      $('#elementID').tsBorder({
+                           thickness: 10,
+                           color: '#ffffff',
+                           opacity:0.7,
+                          });
+      </pre>
+    </div>
+
+
+    <div id="box7b" class="exmpl">
+      <img src="images/img002.jpg" alt="double border" width="180" height="240" align="left" />
+        What happen if you add multiple borders? They stack rather than nest, that's what.<br />
+        See that the first thicker red border is under the thinner green border, giving the effect of an inset.
+      <pre>
+      $('#elementID').tsBorder({
+                           thickness: 20,
+                           color: '#ff0000',
+                           opacity:0.6,
+                          }).tsBorder({
+                           thickness: 10,
+                           color: '#00ff00',
+                           opacity:0.5,
+                          });
+      </pre>
+    </div>
+
+    <div id="box8" class="exmpl">
+
+    <p>
+      <img src="images/img008.jpg" alt="example image with red 10px border" width="240" height="165" align="left" />
+      Notice how the image gets a 10px red border - but the outer div element gets a 3px black tsBorder layer.<br />
+      The Green line is the css border property on the div element - this is <strong>always</strong> outside the element.<br /><br />
+
+      See how see how margins and padding effect the position of the borders.<br />
+      You can use an extra option called <em>offset</em> to try to shift the borders.
+      </p>
+    </div>
+
+
+    <div id="box9" class="exmpl">
+
+    <p>
+    As with any jQuery selector you can apply the effect on multiple elements with a single call
+    </p>
+
+    <pre>
+          $('.thickBlack').tsBorder({
+                           thickness: 15,
+                           color: '#000000',
+                           opacity:0.7,
+                          });
+
+          $('.thickBlack').tsBorder({
+                           thickness: 4,
+                           color: '#00ff00',
+                           opacity:0.7,
+                          });
+    </pre>
+
+    <img src="images/img002.jpg"  class="thickBlack" alt="" width="100" height="80" />
+    <img src="images/img004.jpg" class="thinRed" alt="" width="100" height="80" />
+    <img src="images/img006.jpg" class="thickBlack" alt="" width="100" height="80" />
+    <img src="images/img008.jpg" class="thinRed" alt="" width="100" height="80" />
+    <img src="images/img003.jpg" class="thickBlack" alt="" width="100" height="80" />
+
+    </div>
+
+
+
+    <p>
+    Keep up to date with this plugin at the git repo -  <a href="https://bitbucket.org/faffyman/tsborder" title="Git repo for jquery.tsborder" onclick="window.open(this.href);return false" onkeypress="window.open(this.href);return false;">https://bitbucket.org/faffyman/tsborder</a>
+    </p>
+
+  </body>
+</html>
