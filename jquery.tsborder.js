@@ -2,7 +2,7 @@
 *
 * jQuery tsBorder
 * @copyright Tim Swann https://bitbucket.org/faffyman
-* @version 0.1
+* @version 0.1.1
 *
 * *************************************************************
 *
@@ -66,10 +66,29 @@
             // .position = position relative to the offset parent
 
             oPos = $(this).position();
+            
+            var nLeftBorder = $(this).css('border-left-width');
+            var nTopBorder = $(this).css('border-top-width');
+            nTopBorder = parseInt(nTopBorder);
+            nLeftBorder = parseInt(nLeftBorder);
+            
 
             var nWidth = $(this).width();
             var nHeight = $(this).height();
+            
+            // auto adjust for css border OVERLAP the css border
+            if (opts.autoAdjustForBorder && opts.tsBorderPosition=='outside' ) {
+              nWidth = nWidth + (nLeftBorder * 2);
+              nHeight = nHeight + (nTopBorder * 2);
+            }
 
+            // auto adjust for css border - BUT keep INSIDE the border.
+            // do this by amending the offset options with the border widths.
+			if(opts.autoAdjustForBorder && opts.tsBorderPosition=='inside' ) {
+			  opts.offsetTop = opts.offsetTop + nTopBorder;
+			  opts.offsetLeft = opts.offsetLeft + nLeftBorder;
+			}
+			
             n++;
 
 
@@ -149,7 +168,9 @@
     opacity:1,
     thickness: 15,
     offsetLeft:0,
-    offsetTop:0
+    offsetTop:0,
+    autoAdjustForBorder: false,  // default is false for backwards compatabiliy
+    tsBorderPosition: 'inside'
   };
 
 
