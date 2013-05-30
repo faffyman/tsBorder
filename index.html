@@ -43,6 +43,25 @@
                            opacity:0.5,
                           });
                           
+      // Border Radius  - each corner specified.        
+      $('#box3 img').tsBorder({
+                           thickness: 20,
+                           color: '#ff0000',
+                           opacity:0.6,
+                           borderTopLeftRadius: 8,
+                           borderTopRightRadius: 11,
+                           borderBottomRightRadius: 16,
+                           borderBottomLeftRadius: 20,
+                          });
+       
+       // Border-radius all 4 the same                   
+       $('#box4 img').tsBorder({
+                           thickness: 8,
+                           color: '#8888cc',
+                           opacity:0.6,
+                           borderRadius: 8
+                          });
+                          
                           
     });
 </script>
@@ -100,6 +119,41 @@
 <div id="box2">
   <img src="http://farm6.staticflickr.com/5250/5229719537_64ae3c161d_m.jpg" alt="Big Fish" width="240" height="160" />
 </div>
+
+
+<h4>Apply a Border radius</h4>
+<p>SO long as your radius is not larger that the thickness of yoru border, you can pass through the radius dimensions(will be px) for each corner</p>
+
+<pre><code>
+$('#box3 img').tsBorder({
+                           thickness: 20,
+                           color: '#ff0000',
+                           opacity:0.6,
+                           borderTopLeftRadius: 8,
+                           borderTopRightRadius: 11,
+                           borderBottomRightRadius: 16,
+                           borderBottomLeftRadius: 20,
+                          });
+</code></pre>
+<div id="box3">
+  <img src="http://farm6.staticflickr.com/5250/5229719537_64ae3c161d_m.jpg" alt="Big Fish" width="240" height="160" style="border-radius:8px 11px 16px 20px" />
+</div>
+
+
+<h5>OR - you can give all corners the same radius with a single option</h5>
+<pre><code>
+$('#box4 img').tsBorder({
+                           thickness: 8,
+                           color: '#ff0000',
+                           opacity:0.6,
+                           borderRadius: 8
+                          });
+</code></pre>
+<div id="box4">
+  <img src="http://farm6.staticflickr.com/5250/5229719537_64ae3c161d_m.jpg" alt="Big Fish" width="240" height="160" style="border-radius:8px" />
+</div>
+
+<p><strong>remember</strong> the underlying element should have the same border-radius, or else it wont look right.</p>
 
 
 <p>You can use it to add a border to any block element, not just images.</p>
