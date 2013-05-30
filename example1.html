@@ -21,7 +21,7 @@
     <script>!window.jQuery && document.write('<script src="http://code.jquery.com/jquery-1.4.2.min.js"><\/script>');</script>
 
 
-    <script type="text/javascript"  src="./jquery.tsBorder.min.js" ></script>
+    <script type="text/javascript"  src="./jquery.tsborder2.min.js" ></script>
 
 
     <script type="text/javascript">
@@ -117,7 +117,8 @@
       $('#box8 img').tsBorder({
                            thickness: 10,
                            color: '#ff0000',
-                           opacity:0.7
+                           opacity:0.7,
+                           borderRadius:11,
                           });
 
 
@@ -332,7 +333,7 @@
     <div id="box8" class="exmpl">
 
     <p>
-      <img src="images/img008.jpg" alt="example image with red 10px border" width="240" height="165" align="left" />
+      <img src="images/img008.jpg" alt="example image with red 10px border" width="240" height="165" align="left" style="border-radius:11px" />
       Notice how the image gets a 10px red border - but the outer div element gets a 3px black tsBorder layer.<br />
       The Green line is the css border property on the div element - this is <strong>always</strong> outside the element.<br /><br />
 

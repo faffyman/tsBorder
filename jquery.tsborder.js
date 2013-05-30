@@ -105,6 +105,19 @@
                   top: (oPos.top + opts.offsetTop),
                   left: (oPos.left  + opts.offsetLeft)
                 });
+                
+             //border radius defined?
+             if(opts.borderTopLeftRadius ) {
+                dt.css('border-top-left-radius',parseInt(opts.borderTopLeftRadius) + 'px');
+             } else if (opts.borderRadius>=1) {
+                dt.css('border-top-left-radius',parseInt(opts.borderRadius) + 'px');
+             }
+             // top right
+             if(opts.borderTopRightRadius ) {
+                dt.css('border-top-right-radius',parseInt(opts.borderTopRightRadius) + 'px');
+             } else if (opts.borderRadius>=1) {
+                dt.css('border-top-right-radius',parseInt(opts.borderRadius) + 'px');
+             }
 
             // bottom border
             var db = $("<div id=\"db"+n+"\">");
@@ -121,6 +134,18 @@
                   top: dbtop,
                   left: dbleft
                 });
+                
+             if(opts.borderBottomLeftRadius ) {
+                db.css('border-bottom-left-radius',parseInt(opts.borderBottomLeftRadius) + 'px');
+             } else if (opts.borderRadius>=1) {
+                db.css('border-bottom-left-radius',parseInt(opts.borderRadius) + 'px');
+             }
+             // bottom right
+             if(opts.borderBottomRightRadius ) {
+                db.css('border-bottom-right-radius',parseInt(opts.borderBottomRightRadius) + 'px');
+             } else if (opts.borderRadius>=1) {
+                db.css('border-bottom-right-radius',parseInt(opts.borderRadius) + 'px');
+             }
 
 
             // left border
@@ -170,7 +195,13 @@
     offsetLeft:0,
     offsetTop:0,
     autoAdjustForBorder: false,  // default is false for backwards compatabiliy
-    tsBorderPosition: 'inside'
+    tsBorderPosition: 'inside',
+    borderRadius:0, // default is 0 (square) 
+    borderTopLeftRadius: false, //optional
+    borderTopRightRadius: false, //optional
+    borderBottomRightRadius: false, //optional
+    borderBottomLeftRadius: false //optional
+                
   };
 
 
